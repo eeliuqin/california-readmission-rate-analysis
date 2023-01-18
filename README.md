@@ -12,6 +12,7 @@ Tools: AWS S3, AWS SageMaker
 
 ## Step 1 Obtaining the Data
 I uploaded below data files to AWS S3 for online analyzing. The data files are from 1 main dataset and 2 subdatasets:
+
 [**California All-Cause Unplanned 30-Day Inpatient Readmission Rates**](https://data.chhs.ca.gov/dataset/all-cause-unplanned-30-day-hospital-readmission-rate-california): It's the main dataset, which contains the statewide number and (unadjusted) rate for all-cause, unplanned, 30-day inpatient readmissions in California hospitals from 2011 to 2020 (contains first three quarters for Year 2015). Data are categorized by age, sex, race/ethnicity, expected payer and county.
 
 [**California Licensed and Certified Healthcare Facility Listing**](https://data.chhs.ca.gov/dataset/healthcare-facility-locations): This dataset was recently updated in December, 2022. It includes California healthcare facilities that are operational and have a current license issued by the California Department of Public Health (CDPH) and/or a current U.S. Department of Health and Human Services’ Centers for Medicare and Medicaid Services (CMS) certification.
@@ -38,4 +39,18 @@ I analyzed the readmission rate by Age, Sex, Race-Ethinicity, Payer, and County.
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="By County Overtime" src="images/by-county-overtime.png" width="45%">
 </p>
-## Step 4 Provide Recommendations
+
+I calculated the ratio of Population-to-LTC Type Facilities, the ratio of Population-to-FDR Type Facilities, and Pearson's correlation coefficients
+between each ratio and readmission rates. Here are the 2 ratios that have positive correlations with readmission rates and the heatmap:
+<p align="center">
+  <img alt="2 Ratios" src="images/by-2-ratio.png" width="60%">
+</p>
+<p align="center">
+  <img alt="Heatmap" src="images/heatmap.png" width="60%">
+</p>
+
+
+## Step 4 Recommendation
+- Pay more attention to patients groups with have higher readmission rates, provide early discharge planning and follow-up instructions.
+- Add more General Acute Care Hospitals in areas with high readmission rates and scarce hospital resources, and cooperate with nearby hospitals with abundant resources.
+- Add more Rehabilitation Clinics, or provide assistance for patients to connect to those clinics.
