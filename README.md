@@ -1,6 +1,6 @@
 # Analysis of California 30-Day Inpatient Readmission Rates, 2011-2020
 ## Objective
-This is a project to analyze all-cause unplanned 30-day hospital readmission rates of California statewide and counties, for years 1999-2008.
+This is a project to analyze all-cause unplanned 30-day hospital readmission rates of California statewide and counties, for years 2011-2020.
 
 ## Hypothesis
 Age of patients, race/ethnicity of patients, payer type, county, population to LTC (Long Term Care) type facility ratio, and population to FDR (First Tier, Downstream, and Related Entities defined by CMS) type facility ratio are associated with hospital readmission.
@@ -11,7 +11,7 @@ Age of patients, race/ethnicity of patients, payer type, county, population to L
 - Tools: AWS S3, AWS SageMaker
 
 ## Step 1 Obtaining the Data
-I uploaded below data files to AWS S3 for online analyzing. The data files are from 1 main dataset and 2 subdatasets:
+I uploaded below data files to AWS S3 and analyzed them by AWS SageMaker. The data files are from 1 main dataset and 2 subdatasets:
 
 [**California All-Cause Unplanned 30-Day Inpatient Readmission Rates**](https://data.chhs.ca.gov/dataset/all-cause-unplanned-30-day-hospital-readmission-rate-california): It's the main dataset, which contains the statewide number and (unadjusted) rate for all-cause, unplanned, 30-day inpatient readmissions in California hospitals from 2011 to 2020 (contains first three quarters for Year 2015). Data are categorized by age, sex, race/ethnicity, expected payer and county.
 
@@ -61,5 +61,5 @@ between each ratio and readmission rates. Here are the 2 ratios that have positi
 
 **Recommendation**:
 - Pay more attention to patients groups with have higher readmission rates, provide early discharge planning and follow-up instructions.
-- Add more General Acute Care Hospitals in areas with high readmission rates and scarce hospital resources, and cooperate with nearby hospitals with abundant resources.
-- Add more Rehabilitation Clinics, or provide assistance for patients to connect to those clinics.
+- Open more General Acute Care Hospitals in areas with high readmission rates and scarce hospital resources, and cooperate with nearby hospitals with abundant resources.
+- Open more Rehabilitation Clinics, or provide assistance for patients to connect to those clinics.
