@@ -22,5 +22,11 @@ I uploaded below data files to AWS S3 for online analyzing. The data files are f
 I checked data from unknown counties, removed outliers, cleaned each dataset and merged them into one dataframe by the shared column `County`.
 
 ## Step 3 Analyze
+I analyzed the readmission rate by Age, Sex, Race-Ethinicity, Payer, and County. Here are the corresponding charts:
+<p align="center">
+  <img alt="By Age" src="images/by-age.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="By Sex" src="images/by-sex.png" width="45%">
+</p>
 
 ## Step 4 Provide Recommendations
