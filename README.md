@@ -28,5 +28,14 @@ I analyzed the readmission rate by Age, Sex, Race-Ethinicity, Payer, and County.
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="By Sex" src="images/by-sex.png" width="45%">
 </p>
-
+<p align="center">
+  <img alt="By Race" src="images/by-race.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="By Payer" src="images/by-payer.png" width="45%">
+</p>
+<p align="center">
+  <img alt="By County" src="images/ca-county-map.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="By County Overtime" src="images/by-county-overtime.png" width="45%">
+</p>
 ## Step 4 Provide Recommendations
