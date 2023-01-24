@@ -20,24 +20,29 @@ I uploaded below data files to AWS S3 and analyzed them by AWS SageMaker. The da
 [**California County Population 2020-2021**](https://www.census.gov/data/tables/time-series/demo/popest/2020s-counties-detail.html): This dataset includes county population of California in 2020-2021.
 
 ## Step 2 Data Cleaning and Manipulation
-I checked data from unknown counties, removed outliers, cleaned each dataset and merged them into one dataframe by the shared column `County`.
+1) I checked missing values and incorrect data types of all datasets before data cleaning.
+2) For the main dataset, I combined ICD-9 and ICD-10 related fields, filled missing values, removed records of unknown counties, unnecessary fields, and outliers.
+3) For the licensed facility dataset, I converted uppercase words in the field of county and facility types to be title case.
+4) For the population dataset, I deleted unwanted words, replaced unmatched words from the county field, and dropped rows with null population.
+5) For all datasets, I removed duplicates, corrected data types, renamed not readable fields,
+and then concated them by the shard field `County`.
 
 ## Step 3 Analyze
 I analyzed the readmission rate by Age, Sex, Race-Ethinicity, Payer, and County. Here are the corresponding charts:
 <p align="center">
-  <img alt="By Age" src="images/by-age.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="By Sex" src="images/by-sex.png" width="45%">
+  <img alt="By Age" src="images/by-age.png" width="46%">
+&nbsp; &nbsp; 
+  <img alt="By Sex" src="images/by-sex.png" width="46%">
 </p>
 <p align="center">
-  <img alt="By Race" src="images/by-race.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="By Payer" src="images/by-payer.png" width="45%">
+  <img alt="By Race" src="images/by-race.png" width="46%">
+&nbsp; &nbsp;
+  <img alt="By Payer" src="images/by-payer.png" width="46%">
 </p>
 <p align="center">
-  <img alt="By County" src="images/ca-county-map.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="By County Overtime" src="images/by-county-overtime.png" width="45%">
+  <img alt="By County" src="images/ca-county-2020.png" width="46%">
+&nbsp; &nbsp;
+  <img alt="By County Overtime" src="images/by-county-overtime.png" width="46%">
 </p>
 
 I calculated the ratio of Population-to-LTC Type Facilities, the ratio of Population-to-FDR Type Facilities, and Pearson's correlation coefficients
@@ -52,14 +57,13 @@ between each ratio and readmission rates. Here are the 2 ratios that have positi
 
 ## Step 4 Conclusion and Recommendation
 **Conclusion**:
-- Age Disparities: Elderly patients 65 and older had the highest readmission rates.
-- Sex Disparities: Male patients had higher readmission rates than Female patients.
-- Race-Ethnicity Disparities: Readmission rates were highest among African American patients, followed by Native American patients.
-- Payer Disparities: Patients with Medicare and Medi-Cal had the highest readmission rates and were very close together.
-- County Disparities: Butte County consistently had the highest readmission rates.
-- FDR Facility Ratio Disparities: Counties with larger population to General Acute Care Hospital Ratio or population to Rehabilitation Clinic Ratio have higher readmission rates.
+- Age Disparities: Patients age 65 and plus were associated with higher readmission rates.
+- Sex Disparities: Male was associated with higher readmission rates.
+- Race-Ethnicity Disparities: African Americans, followed by Native Americans, were associated with higher readmission rates.
+- Payer Disparities: Patients with Medicare or Medi-Cal coverage were associated with higher readmission rates.
+- County Disparities: Butte County had the highest readmission rates in 2011 and 2013-2020.
+- Population to Facility Ratio Disparities: The ratio of the population to General Acute Care Hospital and the ratio of the population to Rehabilitation Clinic were positively correlated with readmission rates.
 
 **Recommendation**:
-- Pay more attention to patients groups with have higher readmission rates, provide early discharge planning and follow-up instructions.
-- Open more General Acute Care Hospitals in areas with high readmission rates and scarce hospital resources, and cooperate with nearby hospitals with abundant resources.
-- Open more Rehabilitation Clinics, or provide assistance for patients to connect to those clinics.
+- Further studies are needed to explore the relationships between readmission rates and patient demographics, FDR facilities.
+- A case study is needed in Butte County to identify the root causes of its persistently high readmission rates.
